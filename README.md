@@ -7,9 +7,10 @@
 4. Since the OpenCV object detection method only accepts grayscale images as input, the image must be transformed to grayscale in order to identify the face in it.
 5. It generates a list of detections with the height, the width of the object’s border-box, along with x, y, and coordinates. Now that the faces have been iterated, we may create boundary boxes for each of them.
 6. The model can then be applied to the image to get a prediction. If the prediction is closer to 0, we display "Open" on the screen. In the absence of this, we display "Closed" (i.e., it's nearer 1).
-                            ![image](https://github.com/vamshiachavelli/Driver-Drowsiness-Detection-CNN/assets/58171768/a9e6e822-9946-494e-98a1-225cd79284c6)
+   
+   ![image](https://github.com/vamshiachavelli/Driver-Drowsiness-Detection-CNN/assets/58171768/a9e6e822-9946-494e-98a1-225cd79284c6)
 
-                                  ![image](https://github.com/vamshiachavelli/Driver-Drowsiness-Detection-CNN/assets/58171768/0d57e085-aa8b-4cd9-ba79-2328c8ca6ce6)
+   ![image](https://github.com/vamshiachavelli/Driver-Drowsiness-Detection-CNN/assets/58171768/0d57e085-aa8b-4cd9-ba79-2328c8ca6ce6)
 
 **Dataset Description**
 1. UMass Amherst open eye face data: More than 13,000 photos of faces were gathered from the internet for the data collection. The name of the individual pictured has been written on each face. 
@@ -34,15 +35,13 @@ The following dependencies are required to pre-process the datasets.
 5. The coordinates are obtained by utilizing this snippet after each image has been fetched from its folder.
                            ![image](https://github.com/vamshiachavelli/Driver-Drowsiness-Detection-CNN/assets/58171768/0175851c-2d9c-4072-9e5a-6090175b6439)
 6. Let's make a list to record the values of the coordinates after we have identified them for each eye. Pre-processing is skipped if the library is unable to identify the face.
-                           ![image](https://github.com/vamshiachavelli/Driver-Drowsiness-Detection-CNN/assets/58171768/c95417f0-2986-417a-b97f-23925f663650)
 7. Let's define the boundaries for each eye so that we can remove it from the face. We are extending the range by a cushion to ensure that the entire eye is photographed.
 8. Adding a buffer zone around the coordinates
-                           ![image](https://github.com/vamshiachavelli/Driver-Drowsiness-Detection-CNN/assets/58171768/d00fcc15-66e6-49bf-b6cc-fceed7d8ceb3)
 9. Now, we remove the eye from the face using the PIL image library's crop feature
                            ![image](https://github.com/vamshiachavelli/Driver-Drowsiness-Detection-CNN/assets/58171768/c4a1cc3c-f42b-40f2-8af8-eef380306dca)
-10. Let's adjust the image now so that it has a standard size across the board for all images sent to the neural network.
-11. In order to send it to training, we now create a folder, put it in that folder, and save it.
-12. Above all steps are same for the closed_eye_data.
+11. Let's adjust the image now so that it has a standard size across the board for all images sent to the neural network.
+12. In order to send it to training, we now create a folder, put it in that folder, and save it.
+13. Above all steps are same for the closed_eye_data.
                           ![image](https://github.com/vamshiachavelli/Driver-Drowsiness-Detection-CNN/assets/58171768/fd7c2c93-7462-45a4-bed0-1fae3a3ff179)
                           ![image](https://github.com/vamshiachavelli/Driver-Drowsiness-Detection-CNN/assets/58171768/ded35dbf-b9e2-42b8-b0ee-7656348abd58)
 
